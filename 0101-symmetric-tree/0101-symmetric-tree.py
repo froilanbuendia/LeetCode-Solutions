@@ -21,9 +21,9 @@ class Solution:
         def symmetric(l, r):
             if l == None and r == None:
                 return True
-            if l == None or r == None:
+            if (l == None or r == None) or (l.val != r.val):
                 return False
-            return (l.val == r.val) and symmetric(l.left, r.right) and symmetric(l.right, r.left)
+            return symmetric(l.left, r.right) and symmetric(l.right, r.left)
                 
         return symmetric(root, root)
             
